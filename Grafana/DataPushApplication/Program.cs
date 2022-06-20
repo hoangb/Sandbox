@@ -4,33 +4,23 @@ using App.Metrics.Gauge;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-IMetricsRoot metrics;
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMetrics(metrics = AppMetrics.CreateDefaultBuilder().Build());
+MetricsUtil.Metrics = AppMetrics.CreateDefaultBuilder()
+                        .OutputMetrics.AsPrometheusPlainText()
+                        .OutputMetrics.AsPrometheusProtobuf()
+                        .Build();
+
+builder.Services.AddMetrics(MetricsUtil.Metrics);
 
 var app = builder.Build();
-
-
-
 app.UseMetricsAllMiddleware();
 app.UseMetricsEndpoint(new MetricsPrometheusTextOutputFormatter());
 
-var gauge = new GaugeOptions
-{
-    Name = "My gauge",
-    MeasurementUnit = Unit.Calls
-};
-
-metrics.Measure.Gauge.SetValue(gauge, 1.1);
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -38,9 +28,21 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
+
+public partial class MetricsUtil
+{
+    // Singleton
+    public static IMetricsRoot Metrics;
+}
+
+
+//var gauge = new GaugeOptions
+//{
+//    Name = "ATestGauge",
+//    MeasurementUnit = Unit.Calls
+//};
+
+//MetricsUtil.Metrics.Measure.Gauge.SetValue(gauge, 1.1);
