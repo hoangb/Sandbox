@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPushApplication", "DataPushApplication.csproj", "{E2BBCA4E-BEBF-4314-8A8E-3F91D50E2DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPushApplication", "DataPushApplication.csproj", "{51B6BBC7-8F76-468F-9F36-0F7A2C6746B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E2BBCA4E-BEBF-4314-8A8E-3F91D50E2DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E2BBCA4E-BEBF-4314-8A8E-3F91D50E2DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E2BBCA4E-BEBF-4314-8A8E-3F91D50E2DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E2BBCA4E-BEBF-4314-8A8E-3F91D50E2DD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B6BBC7-8F76-468F-9F36-0F7A2C6746B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B6BBC7-8F76-468F-9F36-0F7A2C6746B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B6BBC7-8F76-468F-9F36-0F7A2C6746B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B6BBC7-8F76-468F-9F36-0F7A2C6746B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {223E3F94-9845-44C6-A376-11C14023DFA6}
+		SolutionGuid = {C83E5901-43F1-4413-BCDD-0C4C132DAF85}
 	EndGlobalSection
 EndGlobal
